@@ -70,7 +70,7 @@ pipeline {
                         -e IMAGE_NAME="$IMAGE_NAME"\
                         -l traefik.enable=true \
                         -l "traefik.http.routers.$IMAGE_NAME.rule=Host(\\`$HOST_IP\\`) && PathPrefix(\\`/$IMAGE_NAME\\`)" \
-                        -l traefik.http.services.$IMAGE_NAME.loadbalancer.server.port=3000 \
+                        -l traefik.http.services.$IMAGE_NAME.loadbalancer.server.port=5173 \
                         $IMAGE_NAME:$IMAGE_TAG
                         '''
                 }
